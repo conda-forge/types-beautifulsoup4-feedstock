@@ -1,4 +1,4 @@
-{% set version = "4.12.0.20240907" %}
+{% set version = "4.12.0.20241020" %}
 
 package:
   name: types-beautifulsoup4
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/t/types-beautifulsoup4/types-beautifulsoup4-{{ version }}.tar.gz
-    sha256: 8d023b86530922070417a1d4c4d91678ab0ff2439b3b2b2cffa3b628b49ebab1
+    sha256: 158370d08d0cd448bd11b132a50ff5279237a5d4b5837beba074de152a513059
   - url: https://raw.githubusercontent.com/python/typeshed/main/LICENSE
     sha256: 295f8538c94ae5c3043301cf7cff1c852dab6a786a8ddee471e061b40d5ecabe
 
