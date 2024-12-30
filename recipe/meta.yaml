@@ -5,23 +5,23 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/t/types-beautifulsoup4/types-beautifulsoup4-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/t/types-beautifulsoup4/types-beautifulsoup4-{{ version }}.tar.gz
     sha256: 158370d08d0cd448bd11b132a50ff5279237a5d4b5837beba074de152a513059
   - url: https://raw.githubusercontent.com/python/typeshed/main/LICENSE
     sha256: 295f8538c94ae5c3043301cf7cff1c852dab6a786a8ddee471e061b40d5ecabe
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - types-html5lib
 
 test:
@@ -31,6 +31,7 @@ test:
     - if not exist %SP_DIR%\\bs4-stubs\\__init__.pyi exit 1  # [win]
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/python/typeshed
